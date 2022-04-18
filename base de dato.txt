@@ -1,0 +1,13 @@
+
+CREATE DATABASE `empleado`;
+CREATE TABLE `empleado`.`empleado` ( 
+`id` INT NOT NULL AUTO_INCREMENT ,
+ `nombres` VARCHAR(100) NOT NULL , 
+`apellidos` VARCHAR(100) NOT NULL , 
+`tipo_de_documento` VARCHAR(100) NOT NULL ,
+ `numero_de_documento` VARCHAR(20) NOT NULL ,
+ `fecha_de_nacimiento` DATE NOT NULL ,
+ `fecha_vinculacion_compania` DATE NOT NULL ,
+ `cargo` VARCHAR(100) NOT NULL , 
+`salario` DOUBLE NOT NULL , 
+PRIMARY KEY (`id`)) ;
