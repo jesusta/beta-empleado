@@ -1,9 +1,11 @@
 package com.empleados.pruebas.dao;
 
 import com.empleados.pruebas.entity.EmpleadoEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface EmpleadoDAO {
-	
-	public EmpleadoEntity save(EmpleadoEntity empleado);
+import java.util.List;
 
+@Repository
+public interface EmpleadoDAO extends JpaRepository<EmpleadoEntity, Long> {
 }

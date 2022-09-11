@@ -1,21 +1,22 @@
 package com.empleados.pruebas.service;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Optional;
 
+import com.empleados.pruebas.exception.NotFountIDException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.empleados.pruebas.dao.EmpleadoDAO;
-import com.empleados.pruebas.dao.EmpleadoDAOImpl;
 import com.empleados.pruebas.dto.EmpleadoDto;
 import com.empleados.pruebas.entity.EmpleadoEntity;
 @Service
 public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Autowired
-	EmpleadoDAO empleadoDAO;
+	private EmpleadoDAO empleadoDAO;
 	
 	@Override
 	public EmpleadoEntity save(EmpleadoDto empleadoDto) {
@@ -41,6 +42,21 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	
 		return emple;
+	}
+
+	@Override
+	public EmpleadoEntity findId(Long id) {
+		Optional<EmpleadoEntity> empleadoEntity;
+		empleadoEntity=empleadoDAO.findById(id);
+		if(empleadoEntity.isEmpty()==true){
+			throw  new NotFountIDException( "No exite el empleado con id : "+id);
+		}
+		return empleadoEntity.get();
+	}
+
+	@Override
+	public List<EmpleadoEntity> findEmpleados() {
+		return empleadoDAO.findAll();
 	}
 
 }
