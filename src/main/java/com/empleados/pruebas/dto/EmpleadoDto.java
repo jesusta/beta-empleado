@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 public class EmpleadoDto {
+	@NotNull(message = "El parametro nombre no puede ser nulo")
+	@NotEmpty(message = "El parametro nombre no puede ser vacio")
 	private String nombres;
 	@NotNull(message = "El parametro apellido no puede ser nulo")
 	@NotEmpty(message = "El parametro apellido no puede ser vacio")
