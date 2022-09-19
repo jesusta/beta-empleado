@@ -1,22 +1,12 @@
 package com.empleados.pruebas.entity;
 
 import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.swing.JSpinner.DateEditor;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import lombok.*;
-import org.hibernate.annotations.Columns;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-
 
 @Entity
 @Table(name = "empleado")

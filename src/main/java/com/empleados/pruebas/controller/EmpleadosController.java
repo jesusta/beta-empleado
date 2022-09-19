@@ -3,35 +3,25 @@ package com.empleados.pruebas.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-
 import javax.validation.Valid;
-
 import com.empleados.pruebas.exception.InvalidDataException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.apache.catalina.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import com.empleados.pruebas.dto.EmpleadoDto;
 import com.empleados.pruebas.dto.ResponseEmpleadoDto;
 import com.empleados.pruebas.entity.EmpleadoEntity;
-
 import com.empleados.pruebas.service.EmpleadoService;
 
 
